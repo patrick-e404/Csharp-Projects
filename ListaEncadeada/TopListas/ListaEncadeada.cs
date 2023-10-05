@@ -122,5 +122,35 @@ namespace TopListas
             }
             _Raiz = nodoAnter;
         }
+        public Nodo ultimoNodo()
+        {
+            if (_Raiz == null)
+            {
+                return null;
+            }
+            Nodo nodo = _Raiz;
+
+            while (nodo.Proximo != null)
+            {
+                nodo = nodo.Proximo;
+            }
+            return nodo;
+        }
+        public void Concatena(ListaEncadeada outraLista)
+        {
+            if (_Raiz == null)
+            {
+                _Raiz = outraLista._Raiz;
+            }
+            else
+            {
+                Nodo last = ultimoNodo();
+
+                if (last != null)
+                {
+                    last.Proximo = outraLista._Raiz;
+                }
+            }
+        }
     }
 }

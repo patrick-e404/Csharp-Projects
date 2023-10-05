@@ -45,11 +45,22 @@ namespace TopListas
             lista.Exibir();
             */
             // --------------------------------------------------------------------------------------- \\
+            /*
             lista.Inserir(10);
             lista.Inserir(20);
             lista.Inserir(30);
             lista.Inverter();
             lista.Exibir();
+            */
+            // --------------------------------------------------------------------------------------- \\
+            ListaEncadeada lista1 = new ListaEncadeada();
+            lista1.Inserir(10);
+            lista1.Inserir(20);
+            ListaEncadeada lista2 = new ListaEncadeada();
+            lista1.Inserir(30);
+            lista1.Inserir(40);
+            lista1.Concatena(lista2);
+            lista1.Exibir();
         }
         static void Main(string[] args)
         {
