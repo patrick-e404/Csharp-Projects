@@ -39,8 +39,16 @@ namespace TopListas
             Console.WriteLine(notFound);
             */
             // --------------------------------------------------------------------------------------- \\
+            /*
             lista.Inserir(20);
             lista.InserirInicio(10);
+            lista.Exibir();
+            */
+            // --------------------------------------------------------------------------------------- \\
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Inserir(30);
+            lista.Inverter();
             lista.Exibir();
         }
         static void Main(string[] args)

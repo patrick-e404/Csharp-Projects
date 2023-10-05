@@ -106,5 +106,21 @@ namespace TopListas
             novoNodo.Proximo = _Raiz;
             _Raiz = novoNodo;
         }
+        public void Inverter()
+        {
+            Nodo nodoAtual = _Raiz;
+            Nodo nodoAnter = null;
+            Nodo nodoProximo = null;
+
+            while (nodoAtual != null)
+            {
+                nodoProximo = nodoAtual.Proximo;
+                nodoAtual.Proximo = nodoAnter;
+
+                nodoAnter = nodoAtual;
+                nodoAtual = nodoProximo;
+            }
+            _Raiz = nodoAnter;
+        }
     }
 }
