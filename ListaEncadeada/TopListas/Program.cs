@@ -53,6 +53,7 @@ namespace TopListas
             lista.Exibir();
             */
             // --------------------------------------------------------------------------------------- \\
+            /*
             ListaEncadeada lista1 = new ListaEncadeada();
             lista1.Inserir(10);
             lista1.Inserir(20);
@@ -61,6 +62,27 @@ namespace TopListas
             lista1.Inserir(40);
             lista1.Concatena(lista2);
             lista1.Exibir();
+            */
+            // --------------------------------------------------------------------------------------- \\
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Inserir(10);
+            lista.Inserir(30);
+            lista.RemoverDuplo();
+            lista.Exibir();
+            /*
+            ListaEncadeada lista1 = new ListaEncadeada();
+            lista1.Inserir(10);
+            lista1.Inserir(20);
+            lista1.Inserir(30);
+            ListaEncadeada lista2 = new ListaEncadeada();
+            lista2.Inserir(20);
+            lista2.Inserir(30);
+            lista2.Inserir(40);
+            ListaEncadeada intersecao = lista1.Intersecao(lista2);
+            intersecao.Exibir();
+            */
+            // --------------------------------------------------------------------------------------- \\
         }
         static void Main(string[] args)
         {

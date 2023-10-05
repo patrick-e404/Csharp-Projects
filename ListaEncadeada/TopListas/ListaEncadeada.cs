@@ -152,5 +152,31 @@ namespace TopListas
                 }
             }
         }
+        public void RemoverDuplo()
+        {
+            if (_Raiz == null || _Raiz.Proximo == null)
+            {
+                return;
+            }
+            Nodo nodoAtual = _Raiz;
+
+            while (nodoAtual != null)
+            {
+                Nodo nodoComparacao = nodoAtual;
+
+                while (nodoComparacao.Proximo != null)
+                {
+                    if (nodoComparacao.Proximo.Conteudo == nodoAtual.Conteudo)
+                    {
+                        nodoComparacao.Proximo = nodoComparacao.Proximo.Proximo;
+                    }
+                    else
+                    {
+                        nodoComparacao = nodoComparacao.Proximo;
+                    }
+                }
+                nodoAtual = nodoAtual.Proximo;
+            }
+        }
     }
 }
