@@ -10,6 +10,23 @@ namespace TopListas
     {
         private Nodo _Raiz;
 
+        public void Exibir()
+        {
+            if (_Raiz == null)
+            {
+                Console.WriteLine("A lista está vazia.");
+                return;
+            }
+            Console.Write(_Raiz.Conteudo);
+            Nodo nodo = _Raiz.Proximo;
+
+            while (nodo != null)
+            {
+                Console.Write($" / {nodo.Conteudo}");
+                nodo = nodo.Proximo;
+            }
+            Console.WriteLine("");
+        }
         public void Inserir(int valor)
         {
             Nodo novoNodo = new Nodo(valor);
@@ -27,22 +44,33 @@ namespace TopListas
             }
             nodo.Proximo = novoNodo;
         }
-        public void Exibir()
+        public void Remover(int valor)
         {
             if (_Raiz == null)
             {
                 Console.WriteLine("A lista está vazia.");
                 return;
             }
-            Console.Write(_Raiz.Conteudo);
-            Nodo nodo = _Raiz.Proximo;
-
-            while (nodo != null)
+            if (_Raiz.Conteudo == valor)
             {
-                Console.Write($"/ {nodo.Conteudo}");
-                nodo = nodo.Proximo;
+                _Raiz = _Raiz.Proximo;
+                return;
             }
-            Console.WriteLine("");
+            Nodo nodoAnter = null;
+            Nodo nodoAtual = _Raiz;
+            
+            while (nodoAtual != null && nodoAtual.Conteudo != valor)
+            {
+                nodoAnter = nodoAtual;
+                nodoAtual = nodoAtual.Proximo;
+            }
+
+            if (nodoAtual == null)
+            {
+                Console.WriteLine("Valor não encontrado na lista.");
+                return;
+            }
+            nodoAnter.Proximo = nodoAtual.Proximo;
         }
     }
 }

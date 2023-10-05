@@ -17,6 +17,8 @@ namespace TopListas
             lista.Inserir(30);
 
             lista.Exibir();
+            lista.Remover((20));
+            lista.Exibir();
         }
         static void Main(string[] args)
         {
