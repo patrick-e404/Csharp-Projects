@@ -201,5 +201,47 @@ namespace TopListas
             }
             return resultado;
         }
+        public void Ordenar()
+        {
+            if (_Raiz == null || _Raiz.Proximo == null)
+            {
+                return;
+            }
+            bool troca;
+
+            do
+            {
+                troca = false;
+                Nodo nodoAtual = _Raiz;
+                Nodo nodoAnterior = null;
+
+                while (nodoAtual.Proximo != null)
+                {
+                    if (nodoAtual.Conteudo > nodoAtual.Proximo.Conteudo)
+                    {
+                        Nodo temp = nodoAtual.Proximo;
+                        nodoAtual.Proximo = temp.Proximo;
+                        temp.Proximo = nodoAtual;
+
+                        if (nodoAnterior != null)
+                        {
+                            nodoAnterior.Proximo = temp;
+                        }
+                        else
+                        {
+                            _Raiz = temp;
+                        }
+                        nodoAnterior = temp;
+                        troca = true;
+                    }
+                    else
+                    {
+                        nodoAnterior = nodoAtual;
+                        nodoAtual = nodoAtual.Proximo;
+                    }
+                }
+            }
+            while (troca);
+        }
     }
 }

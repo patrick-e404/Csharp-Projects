@@ -72,6 +72,8 @@ namespace TopListas
             lista.RemoverDuplo();
             lista.Exibir();
             */
+            // --------------------------------------------------------------------------------------- \\
+            /*
             ListaEncadeada lista1 = new ListaEncadeada();
             lista1.Inserir(10);
             lista1.Inserir(20);
@@ -82,8 +84,17 @@ namespace TopListas
             lista2.Inserir(40);
             ListaEncadeada intersecao = lista1.Intersecao(lista2);
             intersecao.Exibir();
-            
+            */
             // --------------------------------------------------------------------------------------- \\
+            /*
+            lista.Inserir(30);
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Ordenar();
+            lista.Exibir();
+            */
+            // --------------------------------------------------------------------------------------- \\
+
         }
         static void Main(string[] args)
         {
