@@ -10,6 +10,13 @@ namespace TopListas
     public class ListaEncadeada
     {
         private Nodo _Raiz;
+        private int tamanho;
+
+        public ListaEncadeada()
+        {
+            this._Raiz = null;
+            this.tamanho = 0;
+        }
 
         public void Exibir()
         {
@@ -18,15 +25,14 @@ namespace TopListas
                 Console.WriteLine("A lista está vazia.");
                 return;
             }
-            Console.Write(_Raiz.Conteudo);
+            Console.Write($"{_Raiz.Conteudo}/");
             Nodo nodo = _Raiz.Proximo;
 
             while (nodo != null)
             {
-                Console.Write($" / {nodo.Conteudo}");
+                Console.Write($"{nodo.Conteudo}/");
                 nodo = nodo.Proximo;
             }
-            Console.WriteLine("");
         }
         public void Inserir(int valor)
         {
@@ -44,6 +50,7 @@ namespace TopListas
                 nodo = nodo.Proximo;
             }
             nodo.Proximo = novoNodo;
+            tamanho++;
         }
         public void Remover(int valor)
         {
@@ -242,6 +249,28 @@ namespace TopListas
                 }
             }
             while (troca);
+        }
+        public ListaEncadeada[] Dividir()
+        {
+            if (this.tamanho <= 1)
+            {
+                return new ListaEncadeada[] { this };
+            }
+            int metade = this.tamanho / 2;
+            ListaEncadeada lista1 = new ListaEncadeada();
+            ListaEncadeada lista2 = new ListaEncadeada();
+
+            Nodo nodoAtual = this._Raiz;
+            int i = 0;
+
+            while (i < metade)
+            {
+                lista1.Inserir(nodoAtual.Conteudo);
+                nodoAtual = nodoAtual.Proximo;
+                i++;
+            }
+            lista2._Raiz = nodoAtual;
+            return new ListaEncadeada[] { lista1, lista2 };
         }
     }
 }
