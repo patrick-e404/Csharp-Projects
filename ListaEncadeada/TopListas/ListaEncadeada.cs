@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace TopListas
 {
@@ -71,6 +72,39 @@ namespace TopListas
                 return;
             }
             nodoAnter.Proximo = nodoAtual.Proximo;
+        }
+        public int ContarElementos()
+        {
+            int contador = 0;
+            Nodo nodo = _Raiz;
+
+            while (nodo != null)
+            {
+                contador++;
+                nodo = nodo.Proximo;
+            }
+            return contador;
+        }
+        public bool Buscar(int valor)
+        {
+            Nodo nodo = _Raiz;
+
+            do
+            {
+                if (nodo.Conteudo == valor)
+                {
+                    return true;
+                }
+                nodo = nodo.Proximo;
+            }
+            while (nodo != null);
+            return false;
+        }
+        public void InserirInicio(int valor)
+        {
+            Nodo novoNodo = new Nodo(valor);
+            novoNodo.Proximo = _Raiz;
+            _Raiz = novoNodo;
         }
     }
 }
