@@ -178,5 +178,28 @@ namespace TopListas
                 nodoAtual = nodoAtual.Proximo;
             }
         }
+        public ListaEncadeada Intersecao(ListaEncadeada outraLista)
+        {
+            ListaEncadeada resultado = new ListaEncadeada();
+
+            Nodo nodoLista1 = _Raiz;
+
+            while (nodoLista1 != null)
+            {
+                Nodo nodoLista2 = outraLista._Raiz;
+
+                while (nodoLista2 != null)
+                {
+                    if (nodoLista1.Conteudo == nodoLista2.Conteudo)
+                    {
+                        resultado.Inserir(nodoLista1.Conteudo);
+                        break;
+                    }
+                    nodoLista2 = nodoLista2.Proximo;
+                }
+                nodoLista1 = nodoLista1.Proximo;
+            }
+            return resultado;
+        }
     }
 }
