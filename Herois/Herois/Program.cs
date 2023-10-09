@@ -12,6 +12,7 @@ namespace Herois
         public Program()
         {
             superPoder = new SuperPoder("Sentido Apurado", 1);
+            Personagem personagem1 = new Personagem("Homem-Aranha", "Peter Parker");
 
             superPoder.Exibir();
         }

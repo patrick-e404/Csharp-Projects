@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Herois
 {
-    internal class SuperPoder
+    public class SuperPoder
     {
         private string nome;
         private int categoria;
