@@ -94,7 +94,13 @@ namespace TopListas
             lista.Exibir();
             */
             // --------------------------------------------------------------------------------------- \\
-
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Inserir(30);
+            lista.Inserir(40);
+            ListaEncadeada[] listaDivididos = lista.Dividir();
+            listaDivididos[0].Exibir();
+            listaDivididos[1].Exibir();
         }
         static void Main(string[] args)
         {
